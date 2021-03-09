@@ -38,6 +38,7 @@ export const MyForm: FC<MyFormProps> = ({ myAccount }): ReactElement => {
   const findBalance = async () => {
     if (window.ethereum !== undefined) {
       try {
+        // @ts-ignore
         let myBalance = await web3.eth.getBalance(myAccount);
         setBalance(Number(myBalance));
       } catch (error) {
@@ -75,6 +76,7 @@ export const MyForm: FC<MyFormProps> = ({ myAccount }): ReactElement => {
         // gas: `${gas}`,
         to: `${toAddress}`,
         from: window.ethereum.selectedAddress,
+        // @ts-ignore
         value: web3.utils.toWei(`0.1`)
       };
 
