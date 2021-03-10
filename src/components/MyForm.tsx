@@ -18,8 +18,6 @@ export const MyForm: FC<MyFormProps> = ({ myAccount }): ReactElement => {
   const [toAddress, setToAddress] = useState("");
   const [amount, setAmount] = useState(0);
   const [balance, setBalance] = useState(0);
-  // const [gas, setGas] = useState(0);
-  // const [gasPrice, setGasPrice] = useState(0);
 
   let account = myAccount;
 
@@ -57,12 +55,6 @@ export const MyForm: FC<MyFormProps> = ({ myAccount }): ReactElement => {
   const handleAmountChange = (e: React.ChangeEvent<FormControlElement>) => {
     setAmount(Number(e.target.value));
   };
-  // const handleGasChange = (e: React.ChangeEvent<FormControlElement>) => {
-  //   setGas(Number(e.target.value));
-  // };
-  // const handleGasPriceChange = (e: React.ChangeEvent<FormControlElement>) => {
-  //   setGasPrice(Number(e.target.value));
-  // };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     console.log("To address: ", toAddress);
@@ -72,8 +64,6 @@ export const MyForm: FC<MyFormProps> = ({ myAccount }): ReactElement => {
 
     const deployMetamaskTxn = async () => {
       const transactionParameters = {
-        // gasPrice: `${gasPrice}`,
-        // gas: `${gas}`,
         to: `${toAddress}`,
         from: window.ethereum.selectedAddress,
         // @ts-ignore
