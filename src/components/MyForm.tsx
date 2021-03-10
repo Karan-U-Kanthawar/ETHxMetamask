@@ -2,8 +2,6 @@ import React, { FC, ReactElement } from "react";
 import { useEffect, useState } from "react";
 import Web3 from "web3";
 import { Container, Button, Row, Col } from "react-bootstrap";
-import Form from "react-bootstrap/esm/Form";
-import InputGroupWithExtras from "react-bootstrap/esm/InputGroup";
 
 declare type FormControlElement =
   | HTMLInputElement
